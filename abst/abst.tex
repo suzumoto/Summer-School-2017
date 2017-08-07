@@ -1,0 +1,145 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template for Abstract
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-----------------------------------------------------------
+% Next eleven lines are fixed. Don't remove or modify.
+% begin edit 〜 end edit の間を編集してください。
+%-----------------------------------------------------------
+\documentclass[a4j,12pt]{jarticle}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{bm,braket}
+\setlength{\textheight}{245mm}
+\setlength{\textwidth}{160mm}
+\setlength{\topmargin}{3mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\pagestyle{empty}
+
+\begin{document}
+\sloppy
+
+\begin{center}
+{\fontsize{16pt}{14pt} \gtfamily \bf 
+%---------- begin edit
+連続空間経路積分モンテカルロ法を用いた数奇量子相の探索
+%---------- end edit
+}
+\end{center}
+
+\begin{center}
+{\fontsize{14pt}{14pt} \bf 
+%---------- begin edit
+東京大学大学院理学系研究科物理学専攻
+%---------- end edit
+
+%---------- begin edit
+\bf 鈴木基己}
+%---------- end edit
+
+{\fontsize{14pt}{14pt} \fontfamily{times}\selectfont \bf 
+%---------- begin edit
+Search for novel quantum phase with continuous-space path-integral Monte Carlo
+%---------- end edit
+
+\itshape \bfseries 
+%---------- begin edit
+Department of Physics, Graduate School of Science, The University of Tokyo
+%---------- end edit
+ 
+%---------- end begin
+\bf
+Motoi Suzuki
+ %---------- end edit 
+ }
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%キーワード(comment out 可)　　
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---------- Enter a few keywords of your presentation.
+
+{\fontsize{14pt}{4pt} \bf Keywords：
+%---------- begin edit
+超固体,量子モンテカルロ,計算物質科学, Supersolid, Quantum Monte Carlo, Computational Materials Science
+%---------- end edit
+}
+
+%-----------------------------------------------------------
+% Next line is fixed. Don't remove or modify.
+%-----------------------------------------------------------
+
+\vspace*{5mm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% main body of the text
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%---------- begin edit
+1938年に${}^4$Heが低温で超流動相へと相転移を起こすことが発見されて以来、超流動現象に対する研究が活発に行われている。特にこの10年では${}^4$Heの2次元系で固体的な並進秩序と、超流動性を併せ持った量子相の存在が実験及び理論の両面から予想されており、「超固体相 supersolid」と呼ばれ各所でその探索が行われている。本講演では計算機を用いた数値計算によって超固体層の発見を目指す手法(経路積分モンテカルロ法)を紹介する。
+系のハミルトニアンを$\mathcal{H}$とすると、カノニカルアンサンブルの分配関数は
+\begin{eqnarray}
+  Z &=& \mathrm{Tr}[e^{-\beta\mathcal{H}}] = \mathrm{Tr}[(e^{-\frac{\beta}{M}\mathcal{H}})^M] = \int dx\braket{x|(e^{-\frac{\beta}{M}\mathcal{H}})^M|x} \\
+  &=&\int dx_0dx_1\cdots dx_{M-1} \braket{x_0|e^{-\frac{\beta}{M}\mathcal{H}}|x_1}\bra{x_1}\cdots\ket{x_{M-1}}\braket{x_{M-1}|e^{-\frac{\beta}{M}\mathcal{H}}|x_0}
+\end{eqnarray}
+と書ける。$\mathcal{H} = \mathcal{K}+\mathcal{V}$のようにハミルトニアンが運動項$\mathcal{K}$と相互作用項$\mathcal{V}$の和で書けるとすると、Trotter分解によって被積分関数の各$\braket{x_{i-1}|e^{-\frac{\beta}{M}\mathcal{H}}|x_i}$が近似的に計算される。最後の式に出てくる被積分関数を重みとして$(x_0,x_1,\cdots,x_{M-1})$をモンテカルロ法によってサンプルする方法を経路積分モンテカルロ法という。
+%%数式を入れる場合
+%\begin{eqnarray}
+%\mathrm{i}\hbar\frac{\partial}{\partial t}\psi_{\bm k} = \mathcal{H}\psi_{\bm k} 
+%end{eqnarray}
+
+%%図を入れる場合（fig_1.epsを図のファイルに書き換えてください。）
+\begin{figure}[bh]
+\begin{center}
+\includegraphics[width=0.6\linewidth,bb=0 0 960 540]{Worldline-crop.pdf}
+\end{center}
+\caption{Worldline Representation (snapshot)}
+\end{figure}
+
+%%図を二つ並べて入れる場合
+%\begin{figure}[bh]
+%\begin{center}
+%\begin{minipage}{0.49\linewidth}
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{fig_1.eps}
+%\end{center}
+%\caption{}
+%\end{minipage}
+%\begin{minipage}{0.49\linewidth}
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{fig_1.eps}
+%\end{center}
+%\caption{}
+%\end{minipage}
+%\end{center}
+%\end{figure}
+%
+
+
+%%\captionの下に\labelを入れれば本文で参照できます
+%---------- end edit
+
+%-----------------------------------------------------------
+% Next two lines are fixed. Don't remove or modify.
+%-----------------------------------------------------------
+
+\vspace{5mm}
+\parindent 0mm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 必要なら　reference(s)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%---------- begin edit
+
+[1]  M.Boninsegni, N.V.Prokof'ev, and B.V.Svistunov, Phys. Rev. E {\bf74}, 036701 (2006).
+
+
+[2] S.Nakamura, K.Matsui, T.Matsui, and H.Fukuyama arXiv:1406.4388v3 cond-mat.other, 2016.
+
+%---------- end edit
+\end{document}
